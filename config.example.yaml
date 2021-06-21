@@ -1,0 +1,30 @@
+---
+holidays_update_period: 3600
+schedule:
+    self_daily_report_time: 11:00
+    boss_daily_report_time: 13:00
+    broadcast_weekly_report_time: 16:30
+slack:
+    token: xoxb-111111111111-2222222222222-xxxxxxxxxxxxxxxxxxxxxxxx
+jira:
+    token_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    rsa_private_key: /path/to/jira_privatekey.pem
+    rsa_public_key: /path/to/jira_publickey.pem
+    consumer_key: xxxxxxxxxxxxxxxxxxxxxxxx
+    request_sleep: 0.01
+boss_reports:
+    big_boss_jira_nickname:
+        - employee_1_jira_nickname
+        - employee_2_jira_nickname
+self_reports:
+    - big_boss_jira_nickname
+    - employee_1_jira_nickname
+    - employee_2_jira_nickname
+broadcast_weekly_reports:
+    - SLACK_CHANNEL_ID
+
+slack_jira_users:
+    SLACK_BOSS_USER_ID: big_boss_jira_nickname
+    SLACK_USER_ID_1: employee_1_jira_nickname
+    SLACK_USER_ID_2: employee_2_jira_nickname

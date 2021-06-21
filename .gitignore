@@ -6,6 +6,8 @@
 *.o
 *.pm.tdy
 *.bs
+local/
+config.yaml
 
 # Devel::Cover
 cover_db/
