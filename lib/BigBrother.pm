@@ -166,7 +166,7 @@ sub make_broadcast_weekly_report_by_user {
                 next unless $c->{author}{name} eq $assignee;
                 my $comment_created = HTTP::Date::str2time($c->{created});
                 next unless $comment_created > time - BigBrother::DateUtils->previous_workday_before_holiday_delta($time) * 24 * 3600;
-                my ($report) = $c->{body} =~ /^\s*RPT\s*+(.+)$/s;
+                my ($report) = $c->{body} =~ /^\s*RPT\s*+(.+)$/si;
                 push @reports, $report if $report;
             }
             push @{$report{REPORT_KEY_WITH_REPORTS()}}, {
